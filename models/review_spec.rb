@@ -55,9 +55,9 @@ RSpec.describe "Review", :type => :model do
     expect(review).not_to be_valid
   end
 
-  it "rating should be a number between 0 and 5" do
+  it "rating should be a number between 1 and 5" do
     attributes = valid_attributes
-    (0..5).each do |rating|
+    (1..5).each do |rating|
       attributes[:rating] = rating
       review = Review.new(attributes)
       expect(review).to be_valid
